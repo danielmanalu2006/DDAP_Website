@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  background-color: #2b2b2b;
+  font-family: Quicksand, sans-serif;
+}
+
+/* NavBar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b2b2b;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.navbar-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 200%;
+}
+
+.website-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.navbar-right a {
+    font-size: 16px;
+    color: white;
+    line-height: 140%;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #2b2b2b;
+  color: white;
+  text-align: center;
+  padding: 0px 30px;
+}
+
+.hero h1 {
+  font-size: 4.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 160%;
+  text-transform: capitalize;
+}
+
+.hero-stats h4 {
+  font-family: Quicksand;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 140%;
+  color: white;
+  margin-bottom: -10px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap:70px;
+  font-size: 20px;
+  color: #ccc;
+  padding: 50px;
+}
+
+.hero-stats strong {
+  font-size: 20px;
+  color: white;
+}
+
+/*Trending Collection */
+.trending {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 100px 100px;
+  text-align: left;
+}
+
+.trending h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.trending p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.project-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  text-align: left;
+  max-width: 200px;
+}
+
+.project-thumbnail {
+  width: 200px;
+  height: 200px;
+  background-color: #777;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/*Top Rated Artists */
+.top-creators {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 100px 100px;
+  text-align: left;
+}
+
+/* Heading and description */
+.top-creators h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.top-creators p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Grid layout */
+.creator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  counter-reset: creator-rank;
+}
+
+.creator-card {
+  background-color: #3b3b3b;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+/* Avatar circle */
+.creator-card .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #888;
+  margin-bottom: 10px;
+}
+
+/* Automatic numbering */
+.creator-card::before {
+  counter-increment: creator-rank;
+  content: counter(creator-rank);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+  .creator-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .creator-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .creator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Browse Categories */
+.categories {
+  color: white;
+  padding: 100px 5vw;       /* padding responsif */
+  text-align: left;
+  max-width: 1200px;        /* batas lebar maksimal */
+  margin: 0 auto;           /* tengahkan */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;                /* jarak antar kartu */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #929191;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  aspect-ratio: 1 / 1.2;      /* bikin kotak */
+  height: 250px;            /* tinggi tetap */
+  max-width: 200%;         /* lebar maksimal */
+}
+
+.card i {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: white;
+}
+
+.card span {
+  background-color: #2a2a2a; /* bagian bawah kartu */
+  padding: 15px; 
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: capitalize;
+  color: white;
+  text-align: left;
+}
+
+/* Responsive: tablet */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive: HP */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Footer */
+.footer {
+  background-color: #3B3B3B;
+  color: #eee;
+  padding: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+  max-width: 45%;
+}
+
+.footer-left h3, .footer-right h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-left p {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-right li {
+  margin-bottom: 10px;
+}
+
+.footer-right a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  border: 0;
+  height: 1px;
+  background-color: #555;
+  margin: 30px 0 10px 0;
+}
+
+.footer-bottom {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+}
